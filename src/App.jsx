@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Skills from "./pages/Skills";
-import Work from "./pages/Work";
-import Experience from "./pages/Experience";
+import Works from "./pages/Works";
 import Resume from "./pages/Resume";
 import Connect from "./pages/Connect";
 
@@ -20,9 +20,9 @@ const App = () => {
       <main className="flex-grow pt-24">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/experience" element={<Experience />} />
+          <Route path="/works" element={<Works />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/connect" element={<Connect />} />
         </Routes>
