@@ -1,4 +1,3 @@
-// HeroSection.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import cvFile from "../assets/Vishnu_Priya_CV.pdf";
@@ -32,7 +31,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative text-white min-h-screen flex flex-col md:flex-row justify-center items-center px-4 md:px-20 overflow-hidden">
-      
+
       {/* Profile */}
       <div className="flex-1 flex justify-center items-center mb-8 md:mb-0 md:mr-10">
         <img
@@ -45,42 +44,41 @@ const HeroSection = () => {
       {/* Content */}
       <div className="flex-1 flex flex-col justify-center items-start space-y-6 text-center md:text-left">
 
-        {/* Greeting – light & elegant */}
+        {/* Greeting */}
         <p
-          className="text-5xl md:text-3xl text-gray-400 animate-fadeIn"
+          className="text-4xl md:text-3xl text-gray-400 opacity-0 animate-fadeIn delay-100"
           style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}
         >
           Hello, I’m
         </p>
 
-        {/* Name – bold & signature */}
+        {/* Name */}
         <h1
-          className="text-6xl md:text-7xl text-blue-500 animate-fadeIn"
-          style={{ fontFamily: "'Roboto', sans-serif", fontWeight: 900 }}
+          className="text-5xl md:text-7xl text-blue-500 opacity-0 animate-fadeIn delay-300"
+          style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600 }}
         >
           Vishnu Priya T K
         </h1>
 
-        {/* Role – tech style */}
+        {/* Role */}
         <p
-          className="text-3xl md:text-3xl text-blue-400 h-10 animate-fadeIn"
+          className="text-3xl md:text-3xl text-blue-400 h-10 opacity-0 animate-fadeIn delay-500"
           style={{ fontFamily: "'Fira Code', monospace", fontWeight: 500 }}
         >
           {typedText}
         </p>
 
-        {/* Description – readable & soft */}
+        {/* Description */}
         <p
-          className="max-w-3xl text-gray-400 leading-relaxed text-justify animate-fadeIn"
-          style={{ fontFamily: "'Inter', serif", fontWeight: 100 }}
+          className="max-w-3xl text-gray-400 leading-relaxed text-justify opacity-0 animate-fadeIn delay-700"
+          style={{ fontFamily: "'Inter', serif", fontWeight: 300 }}
         >
-          Driven by creativity and innovation, I craft elegant and interactive web experiences.
-          Passionate about creating beautiful and creative websites and applications. Currently pursuing
-          <strong> Bachelor of Engineering in Computer Science and Engineering (B.E. CSE)</strong>.
+          Driven by creativity and innovation, I craft elegant and interactive web experiences. Currently pursuing 
+          <strong style={{fontWeight:600}}> Bachelor of Engineering in Computer Science and Engineering (B.E. CSE)</strong>.
         </p>
 
         {/* Buttons */}
-        <div className="mt-6 flex flex-col md:flex-row gap-4 animate-fadeIn">
+        <div className="mt-6 flex flex-col md:flex-row gap-4 opacity-0 animate-fadeIn delay-900">
           <Link to="/works" className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold transition">
             View My Works
           </Link>
@@ -106,7 +104,14 @@ const HeroSection = () => {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
           }
-          .animate-fadeIn { animation: fadeIn 1s ease forwards; }
+          .animate-fadeIn {
+            animation: fadeIn 1s ease forwards;
+          }
+          .delay-100 { animation-delay: 0.1s; }
+          .delay-300 { animation-delay: 0.3s; }
+          .delay-500 { animation-delay: 0.5s; }
+          .delay-700 { animation-delay: 0.7s; }
+          .delay-900 { animation-delay: 0.9s; }
         `}
       </style>
     </section>
