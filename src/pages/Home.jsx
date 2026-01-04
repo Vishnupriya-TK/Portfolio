@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import cvFile from "../assets/Vishnu_Priya_CV.pdf";
-import profilePic from "../assets/vpk.jpg";
+import profilePic from "../assets/profile.jpeg";
 
 const roles = ["Full Stack Developer", "MERN Stack Developer"];
 
@@ -33,11 +33,11 @@ const HeroSection = () => {
     <section className="relative text-white min-h-screen flex flex-col md:flex-row justify-center items-center px-4 md:px-20 overflow-hidden">
 
       {/* Profile */}
-      <div className="flex-1 flex justify-center items-center mb-8 md:mb-0 md:mr-10">
+      <div className="flex-1 flex justify-center items-center mb-8 md:mb-0 md:mr-11">
         <img
           src={profilePic}
           alt="Vishnu Priya"
-          className="w-56 h-56 md:w-80 md:h-80 rounded-full border-4 border-blue-500 object-cover shadow-lg animate-float"
+          className="w-90 h-95 md:w-90 md:h-95 rounded-full border-3 border-blue-500 object-cover shadow-lg animate-float"
         />
       </div>
 
