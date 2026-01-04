@@ -1,5 +1,5 @@
 import React from "react";
-import SkillCard from "../components/Skillcard.jsx";
+import SkillCard from "../components/SkillCard.jsx";
 import CodingJourney from "../components/CodingJourney.jsx";
 import CodingProfiles from "../components/CodingProfiles.jsx";
 
