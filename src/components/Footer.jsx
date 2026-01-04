@@ -81,7 +81,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/_vishnupriya_28_"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"

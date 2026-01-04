@@ -12,6 +12,15 @@ export default {
        colors: {
             darkblue: '#0a192f', // dark navy tone
         },
+        keyframes: {
+        skillFill: {
+          "0%": { width: "0%" },
+        },
+      },
+      animation: {
+        skillFill: "skillFill 1.2s ease-out forwards",
+      },
+        
     },
   },
   plugins: [],
