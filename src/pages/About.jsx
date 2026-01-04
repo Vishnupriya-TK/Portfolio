@@ -108,13 +108,13 @@ const About = () => {
 
       {/* Intro */}
       <div className="glass-card max-w-4xl p-10 text-center space-y-6">
-        <h1 className="text-5xl font-bold text-blue-400 font-serif">
+        <h1 className="text-2xl md:text-5xl font-bold text-blue-400 font-serif">
           Hello, I am{" "}
-          <span className="text-pink-400 font-cursive">
+          <span className="text-pink-400 font-cursive text-2xl md:text-5xl">
             Vishnu Priya T K
           </span>
         </h1>
-        <p className="text-gray-300 text-lg font-mono">
+        <p className="text-gray-300 text-sm md:text-lg font-mono">
           Passionate Full Stack Developer, deeply involved in coding,
           problem-solving, and continuous learning.
         </p>

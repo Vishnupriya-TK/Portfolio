@@ -46,7 +46,7 @@ const HeroSection = () => {
 
         {/* Greeting */}
         <p
-          className="text-4xl md:text-3xl text-gray-400 opacity-0 animate-fadeIn delay-100"
+          className="text-3xl md:text-3xl text-gray-400 opacity-0 animate-fadeIn delay-100"
           style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400 }}
         >
           Hello, I’m
@@ -54,7 +54,7 @@ const HeroSection = () => {
 
         {/* Name */}
         <h1
-          className="text-5xl md:text-7xl text-blue-500 opacity-0 animate-fadeIn delay-300"
+          className="text-4xl md:text-7xl text-blue-500 opacity-0 animate-fadeIn delay-300"
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600 }}
         >
           Vishnu Priya T K
@@ -62,7 +62,7 @@ const HeroSection = () => {
 
         {/* Role */}
         <p
-          className="text-3xl md:text-3xl text-blue-400 h-10 opacity-0 animate-fadeIn delay-500"
+          className="text-2xl md:text-3xl text-blue-400 h-10 opacity-0 animate-fadeIn delay-500"
           style={{ fontFamily: "'Fira Code', monospace", fontWeight: 500 }}
         >
           {typedText}
