@@ -7,7 +7,7 @@ import Placement from "../Projects/Placement.png";
 import Portfolio from "../Projects/Portfolio.png";
 import Quizapp from "../Projects/Quizapp.png";
 import Taskflow from "../Projects/Taskflow.png";
-import Traveltales from "../Projects/Traveltales.png";
+import Traveltales from "../Projects/TravelTales.png";
 import Wordpress from "../Projects/wp.png";
 import Zoho from "../Projects/Zoho.png";
 
