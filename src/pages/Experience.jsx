@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 /* Assets */
 import Hackathon from "../experience/Hackathon.jpg";
-import IEEEQuiz from "../experience/IEEE Quiz.jpg";
+import IEEEQuiz from "../experience/IEEEQuiz.jpg";
 import Marcello from "../experience/Marcello.jpeg";
 import Phonix from "../experience/Phonix.jpeg";
 import Vcet from "../experience/Vcet.jpg";
