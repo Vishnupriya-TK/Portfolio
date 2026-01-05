@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 /* Assets */
-import Hackathon from "/src/experience/Hackathon.jpg";
-import IEEEQuiz from "../experience/IEEEQuiz.jpg";
-import Marcello from "../experience/Marcello.jpeg";
-import Phonix from "../experience/Phonix.jpeg";
-import Vcet from "../experience/Vcet.jpg";
-import Naukri from "../experience/Naukri.pdf";
+import Hackathon from "../Experience/Hackathon.jpg";
+import IEEEQuiz from "../Experience/IEEEQuiz.jpg";
+import Marcello from "../Experience/Marcello.jpeg";
+import Phonix from "../Experience/Phonix.jpeg";
+import Vcet from "../Experience/Vcet.jpg";
+import Naukri from "../Experience/Naukri.pdf";
 import cvFile from "../assets/Vishnu_Priya_CV.pdf";
 
 const Experience = () => {
