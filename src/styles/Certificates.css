@@ -1,0 +1,173 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Pacifico&display=swap');
+
+/* ==========================
+   CERTIFICATES SECTION
+   ========================== */
+.certificates-section {
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.certificates-title {
+  text-align: center;
+  font-family: 'Sora', serif; 
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+
+/* ==========================
+   GRID LAYOUT
+   ========================== */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+/* ==========================
+   CARD
+   ========================== */
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  border-radius: 24px;
+  border-color: #929aa7;
+  min-height: 400px;
+  max-width: 500px;
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  color: white;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif; /* Card font */
+
+  /* Animation */
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Stagger animation */
+.certificate-card:nth-child(1) { animation-delay: 0.1s; }
+.certificate-card:nth-child(2) { animation-delay: 0.2s; }
+.certificate-card:nth-child(3) { animation-delay: 0.3s; }
+.certificate-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Hover Effect */
+.certificate-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 10px 10px 30px rgba(3, 90, 240, 0.5);
+  border: skyblue 1px solid;
+}
+
+/* No color change on click/focus */
+.certificate-card:active,
+.certificate-card:focus,
+.certificate-card:focus-visible {
+  outline: none;
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+}
+
+/* ==========================
+   IMAGE + ICON
+   ========================== */
+.certificate-image {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.certificate-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.certificate-card:hover .certificate-image img {
+  transform: scale(1.06);
+}
+
+/* ICON (Clickable) */
+.open-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 2;
+}
+
+.open-icon:hover {
+  background: #091228;
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* ==========================
+   TEXT
+   ========================== */
+.certificate-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.certificate-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #9bce04;
+}
+
+.certificate-desc {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #929aa7; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ==========================
+   ANIMATION
+   ========================== */
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ==========================
+   MOBILE OPTIMIZATION
+   ========================== */
+@media (max-width: 640px) {
+  .certificate-image img {
+    height: 170px;
+  }
+
+  .certificate-card {
+    padding: 18px;
+  }
+}
