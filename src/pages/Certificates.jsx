@@ -200,7 +200,7 @@ const Certificates = () => {
             <CertificateCard key={index} {...cert} />
           ))}
       </div>
-      <div className="mt-10 flex flex-col md:flex-row justify-center gap-4 animate-fade-in">
+      <div className="mt-16 flex flex-col md:flex-row justify-center gap-6 animate-fade-in">
 
         <Link
           to="/works"
