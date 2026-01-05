@@ -191,7 +191,7 @@ const Footer = () => {
         "
                 >
                   <Phone size={18} />
-                  +91 XXXXXXXXXX
+                  +91 9042407180
                 </a>
               </li>
 
@@ -212,6 +212,11 @@ const Footer = () => {
                 >
                   <MapPin size={18} />
                   Madurai, Tamil Nadu, India
+                </a>
+              </li>
+              <li className="text-gray-400">
+                <a href="https://portfolio-roan-alpha-13.vercel.app/">
+                  🌐 Visit My Portfolio
                 </a>
               </li>
             </ul>

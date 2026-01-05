@@ -106,8 +106,8 @@ const Projects = () => {
       description:
         "A realistic WhatsApp mobile UI designed in Figma.",
       tech: ["Figma", "UI/UX Design", "Material Icons"],
-      live: "https://www.figma.com/proto/WyxQKyAGgNdUL7zFHaxI3Q/WhatsApp-Clone?node-id=1-2&p=f&t=ZG1G5swEhhAXAlrR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
-      github: "https://www.figma.com/design/WyxQKyAGgNdUL7zFHaxI3Q/WhatsApp-Clone",
+      live: "https://www.figma.com/design/WyxQKyAGgNdUL7zFHaxI3Q/WhatsApp-Clone?node-id=0-1&t=hpQi1tsj8n5s4Eys-1",
+      github: "https://github.com/Vishnupriya-TK/WhatsApp-Clone.git",
     },
   ];
 
