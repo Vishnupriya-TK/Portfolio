@@ -139,7 +139,7 @@ const Experience = () => {
       {/* CTA Buttons */}
       <div className="mt-16 flex flex-col md:flex-row justify-center gap-4 ">
         <Link
-          to="/works"
+          to="/projects"
           className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold transition text-center"
         >
           View My Works
