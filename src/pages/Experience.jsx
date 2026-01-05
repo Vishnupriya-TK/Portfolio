@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 /* Assets */
-import Hackathon from "../experience/Hackathon.jpg";
+import Hackathon from "/src/experience/Hackathon.jpg";
 import IEEEQuiz from "../experience/IEEEQuiz.jpg";
 import Marcello from "../experience/Marcello.jpeg";
 import Phonix from "../experience/Phonix.jpeg";
