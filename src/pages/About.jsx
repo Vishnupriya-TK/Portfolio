@@ -57,26 +57,32 @@ const About = () => {
     {
       title: "Problem Solving",
       description: "Finding effective and creative solutions to challenges.",
-      color: "bg-indigo-400",
+      color: "bg-indigo-600",
       fonts: { title: "font-mono text-2xl", desc: "font-serif" },
     },
     {
       title: "Leadership",
       description: "Guiding teams toward shared goals with confidence.",
-      color: "bg-red-300",
+      color: "bg-red-500",
       fonts: { title: "font-cursive text-2xl", desc: "font-sans" },
     },
     {
       title: "Team Collaboration",
       description: "Working efficiently with teams through clear communication.",
-      color: "bg-purple-400",
+      color: "bg-purple-600",
       fonts: { title: "font-mono text-2xl", desc: "font-serif" },
     },
     {
       title: "Time Management",
       description: "Balancing priorities to deliver quality results on time.",
-      color: "bg-orange-300",
+      color: "bg-orange-500",
       fonts: { title: "font-cursive text-2xl", desc: "font-sans" },
+    },
+    {
+      title: "Communication",
+      description: "Conveying ideas clearly and listening actively.",
+      color: "bg-teal-600",
+      fonts: { title: "font-mono text-2xl", desc: "font-serif" },
     },
   ];
 
