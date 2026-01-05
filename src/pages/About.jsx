@@ -134,7 +134,7 @@ const About = () => {
             Download CV
           </a>
           <Link
-            to="/works"
+            to="/projects"
             className="px-6 py-3 border border-blue-500 hover:bg-blue-500 rounded-xl font-semibold transition font-sans"
           >
             View My Projects
