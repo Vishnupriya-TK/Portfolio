@@ -17,7 +17,7 @@ import SPM from "../Certificates/SPM.jpeg";
 import SQLIBM from "../Certificates/Ibmsql.jpg";
 import UIUXImg from "../Certificates/UIUX.jpeg";
 import CSSHR from "../Certificates/CSSHr.pdf";
-import HRSQL from "../Certificates/SqlHr.jpg";
+import HRSQL from "../Certificates/SqlHR.jpg";
 import CourseraSQL from "../Certificates/SQL.jpeg";
 import JavaHR from "../Certificates/Javabasic.png";
 
