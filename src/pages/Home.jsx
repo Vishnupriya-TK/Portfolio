@@ -79,7 +79,7 @@ const HeroSection = () => {
 
         {/* Buttons */}
         <div className="mt-6 flex flex-col md:flex-row gap-4 opacity-0 animate-fadeIn delay-900">
-          <Link to="/works" className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold transition">
+          <Link to="/projects" className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold transition">
             View My Works
           </Link>
           <a href={cvFile} download className="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg font-semibold transition">
