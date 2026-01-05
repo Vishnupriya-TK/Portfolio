@@ -21,14 +21,14 @@ const Navbar = () => {
           onClick={() => navigate("/")}
           className="flex items-center gap-3"
         >
-          <div className="w-11 h-11 rounded-full bg-blue-900 text-white font-bold flex items-center justify-center">
+          <div className="w-11 h-11 rounded-full bg-blue-900 text-white font-bold flex items-center justify-center font-sans text-2xl ">
             VP
           </div>
           <span className="font-semibold text-xl text-gray-200">Portfolio</span>
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6 font-serif font-bold text-lg">
           <NavLink to="/" className={linkClass}>Home</NavLink>
           <NavLink to="/about" className={linkClass}>About</NavLink>
           <NavLink to="/skills" className={linkClass}>Skills</NavLink>
@@ -49,7 +49,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden px-6 pb-4 flex flex-col gap-2">
+        <div className="md:hidden px-6 pb-4 flex flex-col gap-2 font-serif font-bold text-lg bg-black/90 border-t border-gray-800">
           <NavLink onClick={() => setOpen(false)} to="/" className={linkClass}>Home</NavLink>
           <NavLink onClick={() => setOpen(false)} to="/about" className={linkClass}>About</NavLink>
           <NavLink onClick={() => setOpen(false)} to="/skills" className={linkClass}>Skills</NavLink>

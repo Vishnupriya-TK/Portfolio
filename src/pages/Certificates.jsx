@@ -1,6 +1,8 @@
 import React from "react";
 import CertificateCard from "../components/CertificateCard";
 import "../styles/Certificates.css";
+import cvFile from "../assets/Vishnu_Priya_CV.pdf";
+import { Link } from "react-router-dom";
 
 /* Images & PDFs */
 import Cloud from "../Certificates/CloudComputing.jpeg";
@@ -198,7 +200,35 @@ const Certificates = () => {
             <CertificateCard key={index} {...cert} />
           ))}
       </div>
+      <div className="mt-10 flex flex-col md:flex-row justify-center gap-4 animate-fade-in">
+
+        <Link
+          to="/works"
+          className="bg-blue-500 text-white hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold transition text-center"
+        >
+          View My Works
+        </Link>
+
+        <a
+          href={cvFile}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gray-700 text-white hover:bg-gray-600 px-6 py-3 rounded-lg font-semibold transition text-center"
+        >
+          View CV
+        </a>
+
+        <Link
+          to="/connect"
+          className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition text-center"
+        >
+          Get in Touch
+        </Link>
+      </div>
+
+
     </section>
+
   );
 };
 
