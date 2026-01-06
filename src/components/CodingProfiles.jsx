@@ -15,9 +15,9 @@ const profiles = [
     bg: "from-zinc-800 to-zinc-900",
     url: "https://leetcode.com/u/VISHNUPRIYA-TK/",
     stats: [
-      { value: "272", label: "Solved" },
-      { value: "79.65%", label: "Acceptance" },
-      { value: "481,338", label: "Rank" },
+      { value: "270+", label: "Solved" },
+      { value: "79.79%", label: "Acceptance" },
+      { value: "479,923", label: "Rank" },
       { value: "3", label: "Badges" },
     ],
   },
@@ -63,7 +63,7 @@ const profiles = [
     stats: [
       { value: "500+", label: "Connections" },
       { value: "550+", label: "Followers" },
-      { value: "23", label: "Posts" },
+      { value: "21", label: "Posts" },
       { value: "May 2024", label: "Active From" },
     ],
   },
