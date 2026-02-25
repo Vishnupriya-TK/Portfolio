@@ -10,7 +10,7 @@ const About = () => {
       college: "Velammal College of Engineering and Technology, Madurai",
       duration: "2023 - 2027",
       details: [
-        "CGPA: 9.00/10",
+        "CGPA: 8.87/10",
         "I actively took part in Zoho Cliqtrix ’26 to enhance my problem-solving skills.",
         "I participated in Adobe India Hackathon Round 1 and gained valuable team experience.",
       ],
@@ -84,6 +84,12 @@ const About = () => {
       color: "bg-teal-600",
       fonts: { title: "font-mono text-2xl", desc: "font-serif" },
     },
+    {
+      title: "Adaptability",
+      description: "Quickly adjusting to new technologies, tools, and changing environments.",
+      color: "bg-cyan-500",
+      fonts: { title: "font-cursive text-2xl", desc: "font-sans" },
+    },
   ];
 
   const activities = [
@@ -104,13 +110,14 @@ const About = () => {
     },
     {
       content:
-        "I solved over 250 DSA problems to strengthen my algorithmic thinking and coding skills.",
+        "I Solved 250+ Data Structures and Algorithms problems on GeeksforGeeks and LeetCode to strengthen my problem-solving and algorithmic skills.",
       fonts: { content: "font-mono" },
     },
+
   ];
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-slate-900 to-black px-4 py-16 text-white flex flex-col items-center gap-24">
+    <section className="min-h-screen  text-white flex flex-col items-center gap-24">
 
       {/* Intro */}
       <div className="glass-card max-w-4xl p-10 text-center space-y-6">
@@ -156,11 +163,10 @@ const About = () => {
             {education.map((edu, idx) => (
               <div
                 key={idx}
-                className={`relative flex flex-col md:flex-row ${
-                  idx % 2 === 0
-                    ? "md:justify-start md:pr-12"
-                    : "md:justify-end md:pl-12"
-                }`}
+                className={`relative flex flex-col md:flex-row ${idx % 2 === 0
+                  ? "md:justify-start md:pr-12"
+                  : "md:justify-end md:pl-12"
+                  }`}
               >
                 {/* Timeline dot */}
                 <span className="absolute left-1/2 top-6 w-5 h-5 bg-green-500 rounded-full border-4 border-white -translate-x-1/2 hidden md:block"></span>
@@ -196,7 +202,7 @@ const About = () => {
           {softSkills.map((skill, idx) => (
             <div
               key={idx}
-              className={`${skill.color} p-8 rounded-2xl hover:scale-105 transition space-y-2`}
+              className={`${skill.color} p-8 rounded-2xl hover:scale-105 hover:shadow-2xl transition duration-300 space-y-2 text-white`}
             >
               <h3 className={skill.fonts.title}>{skill.title}</h3>
               <p className={skill.fonts.desc}>{skill.description}</p>
@@ -219,13 +225,12 @@ const About = () => {
             {activities.map((act, idx) => (
               <div
                 key={idx}
-                className={`relative flex flex-col md:flex-row ${
-                  idx % 2 === 0
-                    ? "md:justify-start md:pr-12"
-                    : "md:justify-end md:pl-12"
-                }`}
+                className={`relative flex flex-col md:flex-row ${idx % 2 === 0
+                  ? "md:justify-start md:pr-12"
+                  : "md:justify-end md:pl-12"
+                  }`}
               >
-                <span className="absolute left-1/2 top-4 w-5 h-5 bg-green-500 rounded-full border-4 border-white -translate-x-1/2 hidden md:block"></span>
+                <span className="absolute left-1/2 top-4 w-5 h-5 bg-green-500 rounded-full border-4 border-white -translate-x-1/2 hidden md:block "></span>
 
                 <div className="glass-card w-full md:w-[45%] p-8 hover:scale-105 transition">
                   <p className={`${act.fonts.content} text-gray-200 leading-relaxed`}>
@@ -241,13 +246,24 @@ const About = () => {
       {/* Glass Effect */}
       <style>
         {`
-          .glass-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 1.5rem;
-          }
-        `}
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 1.5rem;
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(0, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(139, 92, 246, 0.3);
+      transform: translateY(-6px);
+    }
+  `}
       </style>
     </section>
   );

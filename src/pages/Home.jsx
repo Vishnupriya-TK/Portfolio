@@ -37,7 +37,7 @@ const HeroSection = () => {
         <img
           src={profilePic}
           alt="Vishnu Priya"
-          className="w-90 h-95 md:w-90 md:h-95 rounded-full border-3 border-blue-500 object-cover shadow-lg animate-float"
+          className="w-90 h-95 md:w-90 md:h-95 rounded-full border-3 border-blue-500 object-cover shadow-lg animate-float "
         />
       </div>
 

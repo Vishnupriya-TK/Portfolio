@@ -21,8 +21,8 @@ const Footer = () => {
     <footer
       className="
         font-body
-        bg-gradient-to-br from-white via-gray-100 to-gray-200
-        dark:from-slate-900 dark:via-slate-950 dark:to-black
+        bg-gradient-to-br
+        dark:from-slate-900 dark:via-slate-950 dark:to-slate-900
         text-gray-800 dark:text-gray-300
         transition-colors duration-300
       "
@@ -111,7 +111,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.hackerrank.com/profile/tkvishnupriyacse"
+                href="https://www.hackerrank.com/profile/4179Vishnupriya"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="HackerRank"

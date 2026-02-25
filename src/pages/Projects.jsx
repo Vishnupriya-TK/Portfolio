@@ -13,6 +13,7 @@ import Portfolio from "../Projects/Portfolio.png";
 import Quizapp from "../Projects/Quizapp.png";
 import Taskflow from "../Projects/Taskflow.png";
 import Traveltales from "../Projects/TravelTales.png";
+import SPS from "../Projects/SPS.png";
 import Wordpress from "../Projects/wp.png";
 import Zoho from "../Projects/Zoho.png";
 
@@ -74,6 +75,15 @@ const Projects = () => {
       github: "https://github.com/Vishnupriya-TK/Portfolio.git",
     },
     {
+      title: "VCET Academic Management System",
+      image: SPS,
+      description:
+        "A full-stack academic management platform designed for Velammal College of Engineering and Technology (VCET) to streamline student academic tracking, mentor monitoring, and class performance analytics.",
+      tech: ["React", "Vite", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      live: "https://drive.google.com/file/d/1cZ0_Mq6qB6380akk8LKw0z8hQaYS_vwv/view?usp=drive_link",
+      github: "https://github.com/Vishnupriya-TK/VCET-STUDENT-PERFORMANCE-TRACKING-SYSTEM.git",
+    },
+    {
       title: "Course Advisor Chatbot (Zoho SalesIQ)",
       image: Zoho,
       description:
@@ -122,12 +132,13 @@ const Projects = () => {
       </p>
 
       {/* Projects Grid */}
-      <div className="projects-grid">
+      <section className="max-w-5xl mx-auto px-5 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
       </div>
-
+      </section>
       {/* CTA Buttons BELOW projects */}
       <div className="mt-16 flex flex-col md:flex-row justify-center gap-4 ">
         <a
@@ -135,7 +146,7 @@ const Projects = () => {
           download
           className="bg-gray-800 text-white hover:bg-gray-700 px-6 py-3 rounded-lg font-semibold transition text-center shadow-md flex items-center justify-center gap-2"
         >
-         Download CV <Download size={18} />
+          Download CV <Download size={18} />
         </a>
 
 

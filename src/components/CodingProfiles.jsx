@@ -15,10 +15,10 @@ const profiles = [
     bg: "from-zinc-800 to-zinc-900",
     url: "https://leetcode.com/u/VISHNUPRIYA-TK/",
     stats: [
-      { value: "270+", label: "Solved" },
-      { value: "79.79%", label: "Acceptance" },
-      { value: "479,923", label: "Rank" },
-      { value: "3", label: "Badges" },
+      { value: "290+", label: "Solved" },
+      { value: "80%", label: "Acceptance" },
+      { value: "457,262", label: "Rank" },
+      { value: "4", label: "Badges" },
     ],
   },
   {
@@ -29,7 +29,7 @@ const profiles = [
     stats: [
       { value: "36", label: "Solved" },
       { value: "73", label: "Score" },
-      { value: "214", label: "Institute Rank" },
+      { value: "225", label: "Institute Rank" },
     ],
   },
   {
@@ -40,7 +40,7 @@ const profiles = [
     stats: [
       { value: "59", label: "Solved" },
       { value: "3", label: "Badges" },
-      { value: "219", label: "Hackos" },
+      { value: "1362", label: "Hackos" },
       { value: "3", label: "Certificates" },
     ],
   },
@@ -50,8 +50,8 @@ const profiles = [
     bg: "from-zinc-700 to-zinc-800",
     url: "https://github.com/Vishnupriya-TK",
     stats: [
-      { value: "10", label: "Repos" },
-      { value: "80+", label: "Commits" },
+      { value: "11", label: "Repos" },
+      { value: "250+", label: "Contributions" },
       { value: "2", label: "Followers" },
     ],
   },
@@ -62,8 +62,8 @@ const profiles = [
     url: "https://www.linkedin.com/in/vishnu-priya-t-k-334288308/",
     stats: [
       { value: "500+", label: "Connections" },
-      { value: "550+", label: "Followers" },
-      { value: "21", label: "Posts" },
+      { value: "650+", label: "Followers" },
+      { value: "24", label: "Posts" },
       { value: "May 2024", label: "Active From" },
     ],
   },
