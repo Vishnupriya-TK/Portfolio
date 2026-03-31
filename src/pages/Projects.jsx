@@ -122,29 +122,39 @@ const Projects = () => {
   ];
 
   return (
-    <section className="projects-section">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-widest">
-        My Projects
-      </h2>
+   <section className="projects-section py-16 px-4 md:px-10">
+  {/* Heading */}
+  <h1 className="certificates-title" text-4xl md:text-5xl style={{ fontFamily: "serif" , textTransform: "uppercase" ,color:"beige"}}>
+    My Projects
+  </h1>
 
-      <p className="text-center mb-16 text-lg">
-        A curated collection of projects showcasing my skills, creativity, and problem-solving approach
-      </p>
+  {/* Subtitle */}
+  <p className="text-center mb-16 text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+    A curated collection of projects showcasing my skills, creativity, and problem-solving approach
+  </p>
 
-      {/* Projects Grid */}
-      <section className="max-w-5xl mx-auto px-5 py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
-      </div>
-      </section>
+  {/* Projects Grid */}
+  <section className="max-w-10xl mx-auto">
+   <div className="grid grid-cols-1 md:grid-cols-2 gap-15 ">
+{/* <div className="grid grid-cols-1 md:grid-cols-2 gap-10 auto-rows-fr"> */}
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          className="transform transition duration-500 hover:-translate-y-3 hover:scale-[1.02]"
+        >
+          <ProjectCard {...project} />
+        </div>
+      ))}
+
+    </div>
+  </section>
+
       {/* CTA Buttons BELOW projects */}
       <div className="mt-16 flex flex-col md:flex-row justify-center gap-4 ">
         <a
           href={cvFile}
           download
-          className="bg-gray-800 text-white hover:bg-gray-700 px-6 py-3 rounded-lg font-semibold transition text-center shadow-md flex items-center justify-center gap-2"
+          className="bg-gray-800 text-white hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition text-center shadow-md flex items-center justify-center gap-2"
         >
           Download CV <Download size={18} />
         </a>

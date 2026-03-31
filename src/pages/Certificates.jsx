@@ -4,6 +4,7 @@ import "../styles/Certificates.css";
 import cvFile from "../assets/Vishnu_Priya_CV.pdf";
 import { Link } from "react-router-dom";
 
+import { FaFolderOpen, FaDownload, FaEnvelope } from "react-icons/fa";
 /* Images & PDFs */
 import Cloud from "../Certificates/CloudComputing.jpeg";
 import CS from "../Certificates/CS.jpeg";
@@ -188,40 +189,56 @@ const certificates = [
 
 const Certificates = () => {
   return (
-    <section className="certificates-section">
-      <h2 className="certificates-title">My Certifications</h2>
-      <p className="text-center text-gray-600 dark:text-gray-500 mb-16 text-lg">
+    <section className="certificates-section max-w-9xl mx-auto px-2 py-16">
+      <h2 className="certificates-title" style={{ fontFamily: "serif" , textTransform: "uppercase" ,color:"pink"}}>MY CERTIFICATIONS</h2>
+      <p className="text-center text-gray-600 dark:text-gray-300 mb-16 text-lg">
         Explore the milestones I’ve earned through learning and dedication.
       </p>
-      <div className="certificates-grid">
+     <div className="max-w-10xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {certificates
           .sort((a, b) => a.date.localeCompare(b.date))
           .map((cert, index) => (
             <CertificateCard key={index} {...cert} />
           ))}
       </div>
-      <div className="mt-16 flex flex-col md:flex-row justify-center gap-6 animate-fade-in">
+      <div className="mt-16 flex flex-col md:flex-row justify-center gap-4 animate-fade-in">
 
         <Link
-          to="/works"
-          className="bg-blue-500 text-white hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold transition text-center"
+          to="/projects"
+          className="flex items-center justify-center gap-2
+           bg-blue-600 hover:bg-blue-700
+           px-6 py-3 rounded-lg font-semibold
+           transition text-white
+           shadow-md hover:shadow-lg hover:scale-105"
         >
+          <FaFolderOpen />
           View My Works
         </Link>
 
+        {/* Download CV */}
         <a
           href={cvFile}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gray-700 text-white hover:bg-gray-600 px-6 py-3 rounded-lg font-semibold transition text-center"
+          download
+          className="flex items-center justify-center gap-2
+           bg-slate-700 hover:bg-slate-600
+           px-6 py-3 rounded-lg font-semibold
+           transition text-white
+           shadow-md hover:shadow-lg hover:scale-105"
         >
+          <FaDownload />
           View CV
         </a>
 
+        {/* Contact */}
         <Link
           to="/connect"
-          className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition text-center"
+          className="flex items-center justify-center gap-2
+           border border-blue-500 hover:bg-blue-500
+           px-6 py-3 rounded-lg font-semibold
+           transition text-white
+           shadow-md hover:shadow-lg hover:scale-105"
         >
+          <FaEnvelope />
           Get in Touch
         </Link>
       </div>

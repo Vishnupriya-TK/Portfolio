@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { FaFolderOpen, FaDownload, FaEnvelope } from "react-icons/fa";
 /* Assets */
 import Hackathon from "../Experience/Hackathon.jpg";
 import IEEEQuiz from "../Experience/IEEEQuiz.jpg";
@@ -71,39 +72,38 @@ const Experience = () => {
   ];
 
   return (
-    <section className="min-h-screen px-4 py-16">
+    <section className="min-h-screen px-2 py-16">
       {/* Heading */}
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center text-cyan-700 mb-14 tracking-widest font-serif">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center text-cyan-300 mb-14 tracking-widest font-serif">
         EXPERIENCE
       </h2>
 
       {/* Timeline Container */}
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative max-w-7xl mx-auto">
         <div className="absolute left-1/2 top-0 h-full w-1 bg-cyan-500 -translate-x-1/2 hidden md:block"></div>
 
         <div className="space-y-12">
           {experiences.map((exp, idx) => (
             <div
               key={idx}
-              className={`relative flex flex-col md:flex-row ${
-                idx % 2 === 0
+              className={`relative flex flex-col md:flex-row ${idx % 2 === 0
                   ? "md:justify-start md:pr-8"
                   : "md:justify-end md:pl-8"
-              }`}
+                }`}
             >
               {/* Timeline Dot */}
               <span className="absolute left-1/2 top-8 w-4 h-4 bg-cyan-500 rounded-full border-4 border-white -translate-x-1/2 hidden md:block"></span>
 
               {/* Card */}
               <div className="glass-card w-full md:w-[46%] p-6 md:p-7 space-y-3 animate-fade hover:scale-[1.03] transition-all duration-300">
-                <h3 className="text-xl md:text-2xl font-bold text-blue-300 font-mono">
+                <h3 className="text-2xl md:text-2xl font-bold text-blue-300 font-mono">
                   {exp.title}
                 </h3>
 
-                <p className="text-lg text-gray-300 font-sans">{exp.date}</p>
-                <p className="text-lg text-gray-500 font-serif">{exp.place}</p>
+                <p className="text-xl text-gray-400 font-sans">{exp.date}</p>
+                <p className="text-xl text-gray-200 font-serif">{exp.place}</p>
 
-                <p className="text-gray-400 font-mono leading-relaxed text-sm md:text-base">
+                <p className="text-gray-400  leading-relaxed text-2xl md:text-base font-normal">
                   {exp.desc}
                 </p>
 
@@ -112,7 +112,7 @@ const Experience = () => {
                   {exp.stack.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 text-xs rounded-full bg-cyan-500/20 border border-cyan-500/20 text-gray-50 font-mono"
+                      className="px-4 py-3 text-lg rounded-4xl bg-blue-500/20 border border-cyan-500/20 text-gray-400 font-mono"
                     >
                       {tech}
                     </span>
@@ -137,28 +137,48 @@ const Experience = () => {
       </div>
 
       {/* CTA Buttons */}
-      <div className="mt-16 flex flex-col md:flex-row justify-center gap-4 ">
+      <div className="mt-16 flex flex-col md:flex-row justify-center gap-4">
+
+        {/* View Works */}
         <Link
           to="/projects"
-          className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg font-semibold transition text-center"
+          className="flex items-center justify-center gap-2
+    bg-blue-600 hover:bg-blue-700
+    px-6 py-3 rounded-lg font-semibold
+    transition text-white
+    shadow-md hover:shadow-lg hover:scale-105"
         >
+          <FaFolderOpen />
           View My Works
         </Link>
 
+        {/* Download CV */}
         <a
           href={cvFile}
           download
-          className="bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-lg font-semibold transition text-center"
+          className="flex items-center justify-center gap-2
+    bg-slate-700 hover:bg-slate-600
+    px-6 py-3 rounded-lg font-semibold
+    transition text-white
+    shadow-md hover:shadow-lg hover:scale-105"
         >
+          <FaDownload />
           View CV
         </a>
 
+        {/* Contact */}
         <Link
           to="/connect"
-          className="border border-blue-500 hover:bg-blue-500 px-6 py-3 rounded-lg font-semibold transition text-center"
+          className="flex items-center justify-center gap-2
+    border border-blue-500 hover:bg-blue-500
+    px-6 py-3 rounded-lg font-semibold
+    transition text-white
+    shadow-md hover:shadow-lg hover:scale-105"
         >
+          <FaEnvelope />
           Get in Touch
         </Link>
+
       </div>
 
       {/* Styles */}

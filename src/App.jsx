@@ -49,6 +49,7 @@ import Certificates from "./pages/Certificates";
 import Connect from "./pages/Connect";
 import ParticlesBackground from "./components/ParticlesBackground"; // ✅ Add this
 
+
 const App = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
