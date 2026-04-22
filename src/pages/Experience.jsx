@@ -74,9 +74,12 @@ const Experience = () => {
   return (
     <section className="min-h-screen px-2 py-16">
       {/* Heading */}
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center text-cyan-300 mb-14 tracking-widest font-serif">
-        EXPERIENCE
+      <h2 className="certificates-title" text-4xl md:text-5xl style={{ fontFamily: "serif" , textTransform: "uppercase" ,color:"#00FFFF"}}>
+        MY EXPERIENCES
       </h2>
+      <h3 className="text-center text-gray-600 dark:text-gray-400 mb-10 sm:mb-16 text-sm sm:text-base md:text-lg px-2 font-mono">
+        Turning ideas into real-world solutions through experience and innovation
+      </h3>
 
       {/* Timeline Container */}
       <div className="relative max-w-7xl mx-auto">
@@ -95,7 +98,7 @@ const Experience = () => {
               <span className="absolute left-1/2 top-8 w-4 h-4 bg-cyan-500 rounded-full border-4 border-white -translate-x-1/2 hidden md:block"></span>
 
               {/* Card */}
-              <div className="glass-card w-full md:w-[46%] p-6 md:p-7 space-y-3 animate-fade hover:scale-[1.03] transition-all duration-300">
+              <div className="glass-card w-full md:w-[46%] p-4 sm:p-5 md:p-7 space-y-2 md:space-y-3 animate-fade hover:scale-[1.03] transition-all duration-300">
                 <h3 className="text-2xl md:text-2xl font-bold text-blue-300 font-mono">
                   {exp.title}
                 </h3>
@@ -103,7 +106,8 @@ const Experience = () => {
                 <p className="text-xl text-gray-400 font-sans">{exp.date}</p>
                 <p className="text-xl text-gray-200 font-serif">{exp.place}</p>
 
-                <p className="text-gray-400  leading-relaxed text-2xl md:text-base font-normal">
+                {/* <p className="text-gray-400  leading-relaxed text-2xl md:text-base font-normal"> */}
+                <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed font-sans">
                   {exp.desc}
                 </p>
 
@@ -112,7 +116,8 @@ const Experience = () => {
                   {exp.stack.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-4 py-3 text-lg rounded-4xl bg-blue-500/20 border border-cyan-500/20 text-gray-400 font-mono"
+                      // className="px-4 py-3 text-lg rounded-4xl bg-blue-500/20 border border-cyan-500/20 text-gray-400 font-mono"
+                      className="px-2 py-1 sm:px-3 sm:py-2 text-xs sm:text-sm md:text-lg rounded-2xl bg-blue-500/20 border border-cyan-500/20 text-gray-400 font-serif"
                     >
                       {tech}
                     </span>

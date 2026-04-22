@@ -256,7 +256,7 @@ const About = () => {
 
   {/* Education */}
   <div className="max-w-6xl w-full">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-purple-400 mb-10 sm:mb-16 font-serif">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-purple-400 mb-10 sm:mb-16 font-serif">
       EDUCATION
     </h2>
 
@@ -300,7 +300,7 @@ const About = () => {
 
   {/* Tech Skills */}
   <div className="max-w-6xl w-full">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-center text-gradient3 mb-6 sm:mb-8">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-center text-gradient3 mb-6 sm:mb-8">
       TECH SKILLS
     </h2>
 
@@ -336,7 +336,7 @@ const About = () => {
 
   {/* Activities */}
   <div className="max-w-6xl w-full">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-green-400 mb-10 sm:mb-16 font-serif">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-green-400 mb-10 sm:mb-16 font-serif">
       ACTIVITIES
     </h2>
 
@@ -360,7 +360,7 @@ const About = () => {
 
   {/* Soft Skills */}
   <div className="max-w-6xl w-full">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-yellow-400 mb-8 sm:mb-12 font-serif">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-yellow-400 mb-8 sm:mb-12 font-serif">
       SOFT SKILLS
     </h2>
 
@@ -386,7 +386,7 @@ const About = () => {
 
   {/* Languages */}
   <div className="max-w-6xl w-full">
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-center text-pink-200 mb-6 sm:mb-8">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-pink-200 mb-6 sm:mb-8 font-bold">
       LANGUAGES
     </h2>
 

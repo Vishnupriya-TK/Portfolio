@@ -107,7 +107,7 @@ const Skills = () => {
       animation: "fadeUp 0.9s ease forwards",
     }}
   >
-    <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold font-serif text-center text-pink-300 dark:text-pink mb-3 sm:mb-4 tracking-wide sm:tracking-widest">
+    <h1 className="certificates-title" text-4xl md:text-5xl style={{ fontFamily: "serif" , textTransform: "uppercase" ,color:"pink"}}>
       MY SKILLS
     </h1>
 
