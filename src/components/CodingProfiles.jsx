@@ -16,7 +16,7 @@ const profiles = [
     url: "https://leetcode.com/u/VISHNUPRIYA-TK/",
     stats: [
       { value: "300+", label: "Solved" },
-      { value: "359,695", label: "Rank" },
+      { value: "306,081", label: "Rank" },
       { value: "81%", label: "Acceptance" },
       { value: "5", label: "Badges" },
     ],
