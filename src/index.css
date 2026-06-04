@@ -1,29 +1,268 @@
 @import "tailwindcss";
 
-/* Smooth theme animation */
-.theme-transition,
-.theme-transition * {
-  transition: 
-    background-color 0.35s ease,
-    color 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-/* Dark Mode */
-:root {
-  --bg: #020617;
-  --text: #e5e7eb;
+html {
+  color-scheme: dark;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: #05070a;
+  color: #e2e8f0;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
 }
+
+/* Unique fonts per page / section */
+.font-display {
+  font-family: "Syne", sans-serif;
+}
+.font-hero-greet {
+  font-family: "JetBrains Mono", monospace;
+}
+.font-hero-name {
+  font-family: "Syne", sans-serif;
+}
+.font-hero-role {
+  font-family: "Space Grotesk", sans-serif;
+}
+.font-hero-body {
+  font-family: "DM Sans", sans-serif;
+}
+.font-nav {
+  font-family: "Outfit", sans-serif;
+}
+
+.page-home {
+  font-family: "Archivo", sans-serif;
+}
+.font-home-greet {
+  font-family: "IBM Plex Mono", monospace;
+}
+.font-home-name {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+.font-home-role {
+  font-family: "IBM Plex Mono", monospace;
+}
+.font-home-bio {
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.font-home-section-label {
+  font-family: "IBM Plex Mono", monospace;
+}
+.font-home-section-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+.font-home-section-body {
+  font-family: "Outfit", sans-serif;
+}
+.font-scroll-hint {
+  font-family: "IBM Plex Mono", monospace;
+}
+.font-timeline-title {
+  font-family: "Rubik", sans-serif;
+}
+.font-timeline-meta {
+  font-family: "IBM Plex Mono", monospace;
+}
+.font-timeline-body {
+  font-family: "Figtree", sans-serif;
+}
+.font-exp-section {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+.page-about {
+  font-family: "Lora", serif;
+}
+.page-about .section-title {
+  font-family: "Playfair Display", serif;
+}
+.page-about .edu-wrap-title {
+  font-family: "Cormorant Garamond", serif;
+}
+.page-skills {
+  font-family: "Sora", sans-serif;
+}
+.page-projects {
+  font-family: "Figtree", sans-serif;
+}
+.page-experience {
+  font-family: "Rubik", sans-serif;
+}
+.page-certificates {
+  font-family: "Nunito Sans", sans-serif;
+}
+.page-connect {
+  font-family: "Inter", sans-serif;
+}
+
+.page-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.page-subtitle,
+.section-subtitle {
+  font-size: 0.9375rem;
+  color: #94a3b8;
+  line-height: 1.65;
+}
+
+.section-title {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8b9cff;
+}
+
+.gradient-heading {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.gradient-heading .accent {
+  background: linear-gradient(90deg, #8b9cff, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.surface-card {
+  background: #111827;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.glass-card {
+  background: rgba(17, 24, 39, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+}
+
+.project-feature-card {
+  background: #0f1419;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 1rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.project-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 156, 255, 0.35);
+}
+
+.tech-tag {
+  font-size: 0.65rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(91, 111, 214, 0.15);
+  color: #8b9cff;
+  border: 1px solid rgba(139, 156, 255, 0.25);
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.btn-primary {
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.65rem;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  background: linear-gradient(135deg, #5b6fd6, #7c6cf0);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(91, 111, 214, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(91, 111, 214, 0.5);
+}
+
+.btn-ghost {
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.65rem;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: #e2e8f0;
+  background: transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(139, 156, 255, 0.5);
+}
+
+.btn-secondary {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  background: #334155;
+  color: #f1f5f9;
+}
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.btn-outline {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: 1px solid #5b6fd6;
+  color: #8b9cff;
+}
+.btn-outline:hover {
+  background: #5b6fd6;
+  color: #fff;
+}
+
+.btn-live {
+  background: #2563eb;
+  color: white;
+}
+.btn-demo {
+  background: #7c3aed;
+  color: white;
+}
+.btn-github {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e2e8f0;
+}
+.btn-github:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.edu-wrapper {
+  background: rgba(15, 20, 30, 0.85);
+  border: 1px solid rgba(139, 156, 255, 0.2);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+}
+
+.activity-card {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -31,19 +270,18 @@ body {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
   }
-  to {
-    opacity: 1;
+  100% {
+    transform: translateX(-50%);
   }
-}
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.8s ease forwards;
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
 }

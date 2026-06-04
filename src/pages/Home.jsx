@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaFolderOpen, FaDownload, FaEnvelope } from "react-icons/fa";
 import cvFile from "../assets/Vishnu_Priya_CV.pdf";
 import profilePic from "../assets/profile.jpeg";
-import { FaFolderOpen, FaDownload, FaEnvelope } from "react-icons/fa";
+import ScrollIndicator from "../components/ScrollIndicator";
+import FeaturedProjects from "../components/FeaturedProjects";
+import TechMarquee from "../components/TechMarquee";
 
 const roles = ["Full Stack Developer", "MERN Stack Developer"];
 
-const HeroSection = () => {
+const Home = () => {
   const [currentRole, setCurrentRole] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [index, setIndex] = useState(0);
 
-  // Typing effect (smooth)
   useEffect(() => {
     const interval = setInterval(() => {
       setTypedText(roles[currentRole].slice(0, index + 1));
       setIndex((prev) => prev + 1);
-
       if (index === roles[currentRole].length) {
         clearInterval(interval);
         setTimeout(() => {
@@ -26,144 +27,101 @@ const HeroSection = () => {
         }, 1200);
       }
     }, 100);
-
     return () => clearInterval(interval);
   }, [index, currentRole]);
 
   return (
-    <section className="relative text-white min-h-screen flex flex-col md:flex-row justify-center items-center px-6 md:px-20 overflow-hidden font-inter">
+    <div className="page-home text-slate-200">
+      <section className="min-h-[calc(100vh-5rem)] flex flex-col justify-center max-w-6xl mx-auto px-4 sm:px-8">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-16">
+          {/* Bio — left */}
+          <div className="flex-1 w-full text-center lg:text-left space-y-4 sm:space-y-5">
+            <p className="font-home-greet text-base sm:text-lg text-slate-300">
+              Hello, I&apos;m
+            </p>
 
-      {/* Profile */}
-      <div className="flex-1 flex justify-center items-center mb-10 md:mb-0 md:mr-12">
-        <img
-          src={profilePic}
-          alt="Vishnu Priya"
-          className="w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-blue-500 object-cover 
-          shadow-2xl animate-float 
-          hover:scale-105 hover:shadow-blue-500/30 transition duration-500"
-        />
-      </div>
+            <h1 className="font-home-name text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#74b9ff] leading-tight tracking-tight">
+              Vishnu Priya T K
+            </h1>
 
-      {/* Content */}
-      <div className="flex-1 flex flex-col justify-center items-start space-y-6 text-center md:text-left">
+            <p className="font-home-role text-xl sm:text-2xl md:text-3xl text-[#00cec9] font-medium min-h-[2.5rem]">
+              {typedText}
+              <span className="animate-blink">|</span>
+            </p>
 
-        {/* Greeting */}
-        <p className="text-2xl md:text-3xl text-slate-400 opacity-0 animate-fadeIn delay-100 font-poppins">
-          Hello, I’m
-        </p>
+            <p className="font-home-bio text-slate-400 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed lg:mx-0 mx-auto pt-1">
+              Driven by creativity and innovation, I craft elegant and interactive web
+              experiences. Currently pursuing{" "}
+              <span className="font-semibold text-white">
+                B.E Computer Science and Engineering
+              </span>
+              .
+            </p>
 
-        {/* Name */}
-        <h1 className="text-3xl md:text-7xl font-poppins font-semibold text-blue-400 leading-tight opacity-0 animate-fadeIn delay-300">
-          Vishnu Priya T K
-        </h1>
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+              <Link
+                to="/projects"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg
+                  bg-[#2e67f2] hover:bg-[#2563eb] text-white text-sm sm:text-base font-semibold
+                  transition shadow-md shadow-blue-900/30"
+              >
+                <FaFolderOpen />
+                View My Works
+              </Link>
 
-        {/* Role */}
-        <p className="text-2xl md:text-3xl text-cyan-400 h-10 font-mono opacity-0 animate-fadeIn delay-500">
-          {typedText}
-          <span className="animate-blink">|</span>
-        </p>
+              <a
+                href={cvFile}
+                download
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg
+                  bg-[#34495e] hover:bg-[#3d566e] text-white text-sm sm:text-base font-semibold transition"
+              >
+                <FaDownload />
+                View CV
+              </a>
 
-        {/* Description */}
-        <p className="max-w-2xl text-slate-400 text-base md:text-lg leading-relaxed opacity-0 animate-fadeIn delay-700">
-          Driven by creativity and innovation, I craft elegant and interactive web experiences.
-          Currently pursuing{" "}
-          <span className="font-semibold text-white">
-            B.E Computer Science and Engineering
-          </span>.
-        </p>
+              <Link
+                to="/connect"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg
+                  border border-[#2e67f2] text-white hover:bg-[#2e67f2]/20
+                  text-sm sm:text-base font-semibold transition"
+              >
+                <FaEnvelope />
+                Get in Touch
+              </Link>
+            </div>
+          </div>
 
-        {/* Buttons */}
-        <div className="mt-6 flex flex-col md:flex-row gap-4 opacity-0 animate-fadeIn delay-900">
-
-          <Link
-            to="/projects"
-            className="flex items-center justify-center gap-2 
-            bg-blue-600 hover:bg-blue-700 
-            px-7 py-3 rounded-lg font-semibold text-lg
-            transition transform hover:scale-105 
-            shadow-md hover:shadow-blue-500/30"
-          >
-            <FaFolderOpen />
-            View My Works
-          </Link>
-
-          <a
-            href={cvFile}
-            download
-            className="flex items-center justify-center gap-2 
-            bg-slate-700 hover:bg-slate-600 
-            px-7 py-3 rounded-lg font-semibold text-lg
-            transition transform hover:scale-105 
-            shadow-md hover:shadow-slate-500/20"
-          >
-            <FaDownload />
-            View CV
-          </a>
-
-          <Link
-            to="/connect"
-            className="flex items-center justify-center gap-2 
-            border border-blue-500 hover:bg-blue-500 
-            px-7 py-3 rounded-lg font-semibold text-lg
-            transition transform hover:scale-105 
-            shadow-md hover:shadow-blue-500/30"
-          >
-            <FaEnvelope />
-            Get in Touch
-          </Link>
-
+          {/* Profile — right */}
+          <div className="flex-shrink-0 flex justify-center lg:justify-end">
+            <img
+              src={profilePic}
+              alt="Vishnu Priya"
+              className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full object-cover
+                border-2 border-white/15"
+            />
+          </div>
         </div>
+      </section>
+
+      <ScrollIndicator targetId="home-projects" />
+
+      <div id="home-projects">
+        <FeaturedProjects />
       </div>
 
-      {/* Animations */}
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap');
+      <div id="home-skills">
+        <TechMarquee />
+      </div>
 
-          .font-inter {
-            font-family: 'Inter', sans-serif;
-          }
-
-          .font-poppins {
-            font-family: 'Poppins', sans-serif;
-          }
-
-          @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-          }
-
-          .animate-float {
-            animation: float 4s ease-in-out infinite;
-          }
-
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(25px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-
-          .animate-fadeIn {
-            animation: fadeIn 0.9s ease forwards;
-          }
-
-          .delay-100 { animation-delay: 0.1s; }
-          .delay-300 { animation-delay: 0.3s; }
-          .delay-500 { animation-delay: 0.5s; }
-          .delay-700 { animation-delay: 0.7s; }
-          .delay-900 { animation-delay: 0.9s; }
-
-          @keyframes blink {
-            0%, 50%, 100% { opacity: 1; }
-            25%, 75% { opacity: 0; }
-          }
-
-          .animate-blink {
-            animation: blink 1s infinite;
-          }
-        `}
-      </style>
-    </section>
+      <style>{`
+        @keyframes blink {
+          0%, 50%, 100% { opacity: 1; }
+          25%, 75% { opacity: 0; }
+        }
+        .animate-blink { animation: blink 1s infinite; }
+      `}</style>
+    </div>
   );
 };
 
-export default HeroSection;
+export default Home;

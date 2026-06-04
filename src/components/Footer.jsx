@@ -21,25 +21,24 @@ const Footer = () => {
     <footer
       className="
         font-body
-        bg-gradient-to-br
-        dark:from-slate-900 dark:via-slate-950 dark:to-slate-900
-        text-gray-800 dark:text-gray-300
-        transition-colors duration-300
+        bg-[#06080d]
+        border-t border-white/8
+        text-slate-300
       "
     >
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-8 sm:py-10">
 
         {/* GRID */}
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3 md:gap-10">
 
           {/* LEFT */}
           <div>
             <h2
               onClick={() => navigate("/")}
               className="
-                font-brand text-3xl cursor-pointer
-                text-blue-600
-                hover:text-blue-500 active:text-blue-500 focus-visible:text-blue-500
+                font-brand text-2xl cursor-pointer
+                text-blue-500
+                hover:text-blue-400 active:text-blue-400 focus-visible:text-blue-400
                 transition-colors duration-300
               "
             >
@@ -48,10 +47,9 @@ const Footer = () => {
 
             <p
               className="
-                font-tagline mt-3 max-w-sm
-                text-gray-600 dark:text-gray-400
-                hover:text-gray-700 active:text-gray-700
-                dark:hover:text-gray-300 dark:active:text-gray-300
+                font-tagline mt-2 max-w-sm text-sm
+                text-slate-400
+                hover:text-slate-300 active:text-slate-300
                 transition-colors duration-300
               "
             >
@@ -59,7 +57,7 @@ const Footer = () => {
             </p>
 
             {/* SOCIAL ICONS */}
-            <div className="flex flex-wrap gap-4 mt-5">
+            <div className="flex flex-wrap gap-3 mt-4">
               <a
                 href="https://github.com/Vishnupriya-TK"
                 target="_blank"
@@ -124,11 +122,11 @@ const Footer = () => {
 
           {/* MIDDLE */}
           <div>
-            <h3 className="font-links text-2xl font-semibold mb-4 text-blue-700">
+            <h3 className="font-links text-lg font-semibold mb-3 text-blue-500">
               Quick Links
             </h3>
 
-            <ul className="space-y-3 font-links">
+            <ul className="space-y-2 font-links text-sm">
               {[
                 { name: "Skills", path: "/skills" },
                 { name: "Projects", path: "/projects" },
@@ -154,11 +152,11 @@ const Footer = () => {
 
           {/* RIGHT */}
           <div>
-            <h3 className="font-contact text-2xl font-semibold mb-4 text-blue-700">
+            <h3 className="font-contact text-lg font-semibold mb-3 text-blue-500">
               Get in Touch
             </h3>
 
-            <ul className="space-y-4 font-contact">
+            <ul className="space-y-2.5 font-contact text-sm">
               {/* EMAIL */}
               <li>
                 <a
@@ -225,7 +223,7 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM */}
-        <div className="mt-19 pt-8 border-t border-blue-50 text-center text-sm text-gray-300 dark:text-gray-400 font-mono">
+        <div className="mt-8 pt-5 border-t border-white/10 text-center text-xs text-slate-500 font-mono">
           © {new Date().getFullYear()} Vishnu Priya Kannan. All rights reserved.
         </div>
 

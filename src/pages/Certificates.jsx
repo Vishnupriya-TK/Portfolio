@@ -1,208 +1,100 @@
-import React from "react";
+import { useMemo, useState } from "react";
 import CertificateCard from "../components/CertificateCard";
+import PageHeader from "../components/PageHeader";
 import "../styles/Certificates.css";
 import cvFile from "../assets/Vishnu_Priya_CV.pdf";
 import { Link } from "react-router-dom";
-
 import { FaFolderOpen, FaDownload, FaEnvelope } from "react-icons/fa";
-/* Images & PDFs */
-import Cloud from "../Certificates/CloudComputing.jpeg";
-import CS from "../Certificates/CS.jpeg";
-import DSA from "../Certificates/DSA.jpeg";
-import EH from "../Certificates/EthicalHacking.jpeg";
-import LLD from "../Certificates/LLD.jpg";
-import ML from "../Certificates/ML.jpeg";
-import MongoDB from "../Certificates/MongoDB.jpeg";
-import OOPS from "../Certificates/OOPS.jpeg";
-import Python from "../Certificates/Python.jpeg";
-import ST from "../Certificates/SoftwareTesting.jpeg";
-import SPM from "../Certificates/SPM.jpeg";
-import SQLIBM from "../Certificates/Ibmsql.jpg";
-import UIUXImg from "../Certificates/UIUX.jpeg";
-import CSSHR from "../Certificates/CssHR.png";
-import HRSQL from "../Certificates/SqlHR.jpg";
-import CourseraSQL from "../Certificates/SQL.jpeg";
-import JavaHR from "../Certificates/Javabasic.png";
-
-const certificates = [
-  {
-    title: "Python",
-    platform: "Marcello Tech",
-    date: "2023",
-    desc: "Beginner-level course covering Python basics, syntax, and programming concepts.",
-    image: Python,
-    link: Python,
-    type: "image",
-  },
-  {
-    title: "MongoDB",
-    platform: "MongoDB University",
-    date: "2024",
-    desc: "Hands-on training on MongoDB fundamentals, CRUD operations, and data modeling.",
-    image: MongoDB,
-    link: MongoDB,
-    type: "image",
-  },
-  {
-    title: "Machine Learning",
-    platform: "Marcello Tech",
-    date: "2024",
-    desc: "Theoretical aspects of machine learning algorithms and their applications.",
-    image: ML,
-    link: ML,
-    type: "image",
-  },
-
-  {
-    title: "SQL (IBM Cognitive Class)",
-    platform: "IBM Cognitive Class",
-    date: "2024",
-    desc: "Learned SQL queries, joins, aggregations, and database fundamentals.",
-    image: SQLIBM,
-    link: SQLIBM,
-    type: "image",
-  },
-
-  {
-    title: "OOPS (Java)",
-    platform: "HackerRank",
-    date: "2024",
-    desc: "Object-oriented programming principles using Java.",
-    image: OOPS,
-    link: OOPS,
-    type: "image",
-  },
-
-  {
-    title: "Cyber Security",
-    platform: "Microsoft, Tata Strike",
-    date: "2024",
-    desc: "Core computer science concepts and system fundamentals.",
-    image: CS,
-    link: CS,
-    type: "image",
-  },
-
-  {
-    title: "Software Testing",
-    platform: "NPTEL",
-    date: "2024",
-    desc: "Software testing methodologies, types, and best practices.",
-    image: ST,
-    link: ST,
-    type: "image",
-  },
-  {
-    title: "Cloud Computing",
-    platform: "NPTEL",
-    date: "2025",
-    desc: "Cloud fundamentals, service models, and deployment concepts.",
-    image: Cloud,
-    link: Cloud,
-    type: "image",
-  },
-  {
-    title: "SQL (Coursera)",
-    platform: "Coursera",
-    date: "2025",
-    desc: "SQL fundamentals and queries using real-world datasets.",
-    image: CourseraSQL,
-    link: CourseraSQL,
-    type: "image",
-  },
-  {
-    title: "UI/UX Design",
-    platform: "Coursera / Marcello Tech",
-    date: "2025",
-    desc: "Fundamentals of user interface and user experience design with modern tools.",
-    image: UIUXImg,
-    link: UIUXImg,
-    type: "image",
-  },
-  {
-    title: "SQL (Basic)",
-    platform: "HackerRank",
-    date: "2025",
-    desc: "Basic SQL queries, joins, and database concepts.",
-    image: HRSQL,
-    link: HRSQL,
-    type: "pdf",
-  },
-  {
-    title: "LLD",
-    platform: "Scaler Academy",
-    date: "2025",
-    desc: "Low-level design concepts, system structuring, and design patterns.",
-    image: LLD,
-    link: LLD,
-    type: "image",
-  },
-  {
-    title: "Ethical Hacking",
-    platform: "NPTEL",
-    date: "2025",
-    desc: "Cybersecurity basics, vulnerabilities, and ethical hacking tools.",
-    image: EH,
-    link: EH,
-    type: "image",
-  },
-
-  {
-    title: "String Pattern Matching",
-    platform: "Scaler Academy",
-    date: "2025",
-    desc: "String pattern matching algorithms and their real-world applications.",
-    image: SPM,
-    link: SPM,
-    type: "image",
-  },
-  {
-    title: "Java DSA",
-    platform: "Online Course",
-    date: "2025",
-    desc: "Strong foundation in data structures, algorithms, and problem-solving techniques.",
-    image: DSA,
-    link: DSA,
-    type: "image",
-  },
-
-
-  {
-    title: "Java (HackerRank)",
-    platform: "HackerRank",
-    date: "2025",
-    desc: "Core Java programming concepts and exercises.",
-    image: JavaHR,
-    link: JavaHR,
-    type: "image",
-  },
-  {
-    title: "CSS (Basic)",
-    platform: "HackerRank",
-    date: "2025",
-    desc: "Modern CSS concepts including layouts, flexbox, and responsiveness.",
-    image: CSSHR,
-    link: CSSHR,
-  },
-
-];
+import { Filter } from "lucide-react";
+import {
+  certificates,
+  certificateCategories,
+  certificateYears,
+} from "../data/certificates";
 
 const Certificates = () => {
-  return (
-    <section className="certificates-section max-w-9xl mx-auto px-2 py-16">
-      <h2 className="certificates-title" style={{ fontFamily: "serif" , textTransform: "uppercase" ,color:"pink"}}>MY CERTIFICATIONS</h2>
-      <p className="text-center text-gray-600 dark:text-gray-300 mb-16 text-lg">
-        Explore the milestones I’ve earned through learning and dedication.
-      </p>
-     <div className="max-w-10xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        {certificates
-          .sort((a, b) => a.date.localeCompare(b.date))
-          .map((cert, index) => (
-            <CertificateCard key={index} {...cert} />
-          ))}
-      </div>
-      <div className="mt-16 flex flex-col md:flex-row justify-center gap-4 animate-fade-in">
+  const [category, setCategory] = useState("All");
+  const [year, setYear] = useState("All");
 
+  const filtered = useMemo(() => {
+    return certificates
+      .filter((cert) => category === "All" || cert.category === category)
+      .filter((cert) => year === "All" || cert.date === year)
+      .sort((a, b) => a.date.localeCompare(b.date));
+  }, [category, year]);
+
+  return (
+    <section className="page-certificates max-w-6xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
+      <PageHeader
+        title="My Certifications"
+        subtitle="Milestones earned through learning, practice, and dedication."
+      />
+
+      <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-8 p-4 rounded-xl border border-white/10 bg-[#0f1419]">
+        <span className="flex items-center gap-2 text-sm text-slate-400 shrink-0">
+          <Filter size={16} className="text-[#8b9cff]" />
+          Filter by
+        </span>
+
+        <label className="flex flex-col gap-1 flex-1 min-w-[140px]">
+          <span className="text-xs text-slate-500 uppercase tracking-wide">Category</span>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="rounded-lg border border-white/15 bg-[#151b28] text-sm text-white px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/40"
+          >
+            {certificateCategories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="flex flex-col gap-1 flex-1 min-w-[120px]">
+          <span className="text-xs text-slate-500 uppercase tracking-wide">Year</span>
+          <select
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+            className="rounded-lg border border-white/15 bg-[#151b28] text-sm text-white px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500/40"
+          >
+            {certificateYears.map((y) => (
+              <option key={y} value={y}>
+                {y === "All" ? "All years" : y}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        {(category !== "All" || year !== "All") && (
+          <button
+            type="button"
+            onClick={() => {
+              setCategory("All");
+              setYear("All");
+            }}
+            className="text-sm text-[#8b9cff] hover:text-white transition sm:self-end px-2 py-2"
+          >
+            Clear filters
+          </button>
+        )}
+
+        <p className="text-xs text-slate-500 sm:ml-auto sm:self-end">
+          {filtered.length} certificate{filtered.length !== 1 ? "s" : ""}
+        </p>
+      </div>
+
+      {filtered.length === 0 ? (
+        <p className="text-center text-slate-400 py-12">No certificates match these filters.</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {filtered.map((cert, index) => (
+            <CertificateCard key={`${cert.title}-${index}`} {...cert} />
+          ))}
+        </div>
+      )}
+
+      <div className="mt-16 flex flex-col md:flex-row justify-center gap-4 animate-fade-in">
         <Link
           to="/projects"
           className="flex items-center justify-center gap-2
@@ -215,7 +107,6 @@ const Certificates = () => {
           View My Works
         </Link>
 
-        {/* Download CV */}
         <a
           href={cvFile}
           download
@@ -229,7 +120,6 @@ const Certificates = () => {
           View CV
         </a>
 
-        {/* Contact */}
         <Link
           to="/connect"
           className="flex items-center justify-center gap-2
@@ -242,10 +132,7 @@ const Certificates = () => {
           Get in Touch
         </Link>
       </div>
-
-
     </section>
-
   );
 };
 

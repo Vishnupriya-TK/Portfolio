@@ -1,164 +1,98 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import {
+  Menu,
+  X,
+  Home,
+  User,
+  Sparkles,
+  FolderKanban,
+  Briefcase,
+  Award,
+  Mail,
+} from "lucide-react";
 import { useState } from "react";
+
+const navLinks = [
+  { to: "/", label: "Home", icon: Home },
+  { to: "/about", label: "About", icon: User },
+  { to: "/skills", label: "Skills", icon: Sparkles },
+  { to: "/projects", label: "Projects", icon: FolderKanban },
+  { to: "/experience", label: "Experience", icon: Briefcase },
+  { to: "/certificates", label: "Certificates", icon: Award },
+  { to: "/connect", label: "Connect", icon: Mail },
+];
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
-  // ❌ DO NOT CHANGE (as per your request)
   const linkClass = ({ isActive }) =>
-    `relative px-2 sm:px-3 py-1.5 sm:py-2 font-medium 
-     text-sm sm:text-base md:text-lg transition duration-300
+    `relative inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-2 font-medium text-sm lg:text-[14px] transition duration-300
+     ${isActive ? "text-[#8b9cff]" : "text-slate-300 hover:text-[#8b9cff]"}
+     after:content-[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[2px]
+     after:bg-gradient-to-r after:from-[#8b9cff] after:to-violet-500 after:origin-left after:transition-transform after:duration-300
+     ${isActive ? "after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-100"}`;
 
-     ${isActive ? "text-blue-400" : "text-gray-300 hover:text-blue-400"}
-
-     after:content-['']
-     after:absolute
-     after:left-0
-     after:bottom-0
-     after:h-[2px]
-     after:w-full
-     after:bg-gradient-to-r
-     after:from-cyan-300
-     after:to-blue-600
-     after:scale-x-0
-     after:origin-left
-     after:transition-transform
-     after:duration-300
-
-     ${isActive ? "after:scale-x-100" : ""}
-    `;
+  const mobileLinkClass = ({ isActive }) =>
+    `flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm font-medium transition
+     ${isActive ? "bg-[#5b6fd6] text-white" : "text-slate-300 hover:bg-white/10"}`;
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur bg-black/90 border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+    <header className="fixed top-0 w-full z-50 flex justify-center px-3 sm:px-4 pt-3 pointer-events-none">
+      <nav
+        className="
+          pointer-events-auto w-full md:w-[90%] max-w-[90rem]
+          backdrop-blur-md bg-[#111827]/90 border border-[#8b9cff]/15
+          rounded-xl md:rounded-2xl shadow-lg shadow-black/30
+        "
+      >
+        <div className="px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3">
+          <div className="flex items-center justify-between gap-4">
+            <button
+              onClick={() => navigate("/")}
+              className="flex items-center gap-2.5 shrink-0"
+            >
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#5b6fd6] to-violet-500 text-white font-bold flex items-center justify-center text-sm font-display">
+                VP
+              </div>
+              <span className="font-semibold text-sm sm:text-base text-white font-display whitespace-nowrap">
+                Portfolio
+              </span>
+            </button>
 
-        {/* Logo */}
-        <button
-          onClick={() => navigate("/")}
-          className="flex items-center gap-2 sm:gap-3"
-        >
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-blue-900 text-white font-bold flex items-center justify-center text-lg sm:text-xl">
-            VP
+            <div className="hidden md:flex items-center justify-end gap-3 lg:gap-5 xl:gap-6 font-nav shrink-0">
+              {navLinks.map(({ to, label, icon: Icon }) => (
+                <NavLink key={to} to={to} className={linkClass}>
+                  <Icon size={15} className="shrink-0 opacity-85" />
+                  {label}
+                </NavLink>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setOpen(!open)}
+              className="md:hidden p-2.5 rounded-lg text-slate-200 hover:bg-white/10 active:bg-white/15 transition touch-manipulation shrink-0"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+            >
+              {open ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
-          <span className="font-semibold text-base sm:text-lg md:text-xl text-gray-200">
-            Portfolio
-          </span>
-        </button>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-4 lg:gap-6 font-sans font-bold">
-          <NavLink to="/" className={linkClass}>Home</NavLink>
-          <NavLink to="/about" className={linkClass}>About</NavLink>
-          <NavLink to="/skills" className={linkClass}>Skills</NavLink>
-          <NavLink to="/projects" className={linkClass}>Projects</NavLink>
-          <NavLink to="/experience" className={linkClass}>Experience</NavLink>
-          <NavLink to="/certificates" className={linkClass}>Certificates</NavLink>
-          <NavLink to="/connect" className={linkClass}>Connect</NavLink>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 text-gray-300"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden px-4 sm:px-6 pb-4 flex flex-col gap-2 font-sans font-bold text-sm sm:text-base bg-black/90 border-t border-gray-800">
-
-          {/* Mobile Links (Override underline here) */}
-          <NavLink
-            onClick={() => setOpen(false)}
-            to="/"
-            className={({ isActive }) =>
-              `${linkClass({ isActive })} after:hidden ${
-                isActive ? "bg-blue-600 text-white rounded-md" : ""
-              }`
-            }
-          >
-            Home
-          </NavLink>
-
-          <NavLink
-            onClick={() => setOpen(false)}
-            to="/about"
-            className={({ isActive }) =>
-              `${linkClass({ isActive })} after:hidden ${
-                isActive ? "bg-blue-600 text-white rounded-md" : ""
-              }`
-            }
-          >
-            About
-          </NavLink>
-
-          <NavLink
-            onClick={() => setOpen(false)}
-            to="/skills"
-            className={({ isActive }) =>
-              `${linkClass({ isActive })} after:hidden ${
-                isActive ? "bg-blue-600 text-white rounded-md" : ""
-              }`
-            }
-          >
-            Skills
-          </NavLink>
-
-          <NavLink
-            onClick={() => setOpen(false)}
-            to="/projects"
-            className={({ isActive }) =>
-              `${linkClass({ isActive })} after:hidden ${
-                isActive ? "bg-blue-600 text-white rounded-md" : ""
-              }`
-            }
-          >
-            Projects
-          </NavLink>
-
-          <NavLink
-            onClick={() => setOpen(false)}
-            to="/experience"
-            className={({ isActive }) =>
-              `${linkClass({ isActive })} after:hidden ${
-                isActive ? "bg-blue-600 text-white rounded-md" : ""
-              }`
-            }
-          >
-            Experience
-          </NavLink>
-
-          <NavLink
-            onClick={() => setOpen(false)}
-            to="/certificates"
-            className={({ isActive }) =>
-              `${linkClass({ isActive })} after:hidden ${
-                isActive ? "bg-blue-600 text-white rounded-md" : ""
-              }`
-            }
-          >
-            Certificates
-          </NavLink>
-
-          <NavLink
-            onClick={() => setOpen(false)}
-            to="/connect"
-            className={({ isActive }) =>
-              `${linkClass({ isActive })} after:hidden ${
-                isActive ? "bg-blue-600 text-white rounded-md" : ""
-              }`
-            }
-          >
-            Connect
-          </NavLink>
-
-        </div>
-      )}
-    </nav>
+        {open && (
+          <div className="md:hidden px-3 pb-3 flex flex-col gap-0.5 border-t border-[#8b9cff]/15 bg-[#111827]/95 font-nav rounded-b-xl">
+            {navLinks.map(({ to, label, icon: Icon }) => (
+              <NavLink key={to} to={to} onClick={() => setOpen(false)} className={mobileLinkClass}>
+                <Icon size={18} />
+                {label}
+              </NavLink>
+            ))}
+          </div>
+        )}
+      </nav>
+    </header>
   );
 };
 
