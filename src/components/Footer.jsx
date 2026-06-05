@@ -213,7 +213,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="text-gray-400">
-                <a href="https://portfolio-roan-alpha-13.vercel.app/">
+                <a href="https://vishnu-priya-tk.vercel.app/">
                   🌐 Visit My Portfolio
                 </a>
               </li>

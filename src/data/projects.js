@@ -59,7 +59,7 @@ export const projects = [
     description:
       "A modern portfolio showcasing skills, projects, and coding journey.",
     tech: ["React", "Vite", "Tailwind", "Framer Motion"],
-    live: "https://portfolio-roan-alpha-13.vercel.app/",
+    live: "https://vishnu-priya-tk.vercel.app/",
     demo: "https://drive.google.com/file/d/1iKCYT_0LuLRgOMIa-KD5ZYNVUZAO8uJi/view?usp=sharing",
     github: "https://github.com/Vishnupriya-TK/Portfolio.git",
   },
